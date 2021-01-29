@@ -1,6 +1,6 @@
 import 'package:injectable_tutorial/domain/i_counter_repository.dart';
 import 'package:injectable_tutorial/injection.dart';
-import 'package:injectable_tutorial/injection.iconfig.dart';
+import 'package:injectable_tutorial/injection.config.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 

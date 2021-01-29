@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:injectable_tutorial/infrastructure/counter_repository.dart';
-import 'package:injectable_tutorial/infrastructure/dev_counter_repository.dart';
 import 'package:injectable_tutorial/injection.dart';
-import 'package:injectable_tutorial/injection.iconfig.dart';
 import 'package:injectable_tutorial/presentation/counter_change_notifier.dart';
 import 'package:injectable_tutorial/presentation/counter_page.dart';
+
 import 'package:provider/provider.dart';
 
 void main() {
-  configureInjection(Env.dev);
+  configureInjection(Env.prod);
   runApp(MyApp());
 }
 
@@ -18,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: ChangeNotifierProvider(
+        // Manually passing in the production repository
         create: (_) => getIt<CounterChangeNotifier>(),
         child: CounterPage(),
       ),
